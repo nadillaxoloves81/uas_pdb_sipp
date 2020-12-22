@@ -55,7 +55,7 @@ class PendudukController extends Controller
         $validateData = $request->validate([
             'kartu_keluarga_id' => 'required',
             'nama' => 'required',
-            'nik' => 'required|size:16|unique:penduduk,nik',
+            'nik' => 'required|size:16',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
             'agama' => 'required',
@@ -127,7 +127,7 @@ class PendudukController extends Controller
         $validateData = $request->validate([
             'kartu_keluarga_id' => 'required',
             'nama' => 'required',
-            'nik' => 'required|size:16|unique:penduduk,nik',
+            'nik' => 'required|size:16',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
             'agama' => 'required',
