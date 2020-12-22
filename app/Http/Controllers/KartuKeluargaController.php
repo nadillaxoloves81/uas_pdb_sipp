@@ -48,7 +48,7 @@ class KartuKeluargaController extends Controller
     {
 
         $validateData = $request->validate([
-            'no' => 'required|size:16|unique:kartu_keluarga,no',
+            'no' => 'required|size:16',
             'jorong_id' => 'required',
             'tanggal_pencatatan' => 'required',
         ]);
@@ -98,7 +98,7 @@ class KartuKeluargaController extends Controller
     public function update(Request $request, $id)
     {
         $validateData = $request->validate([
-            'no' => 'required|size:16|unique:kartu_keluarga,no',
+            'no' => 'required|size:16',
             'jorong_id' => 'required',
             'tanggal_pencatatan' => 'required',
         ]);
@@ -146,7 +146,7 @@ class KartuKeluargaController extends Controller
         $validateData = $request->validate([
             'kartu_keluarga_id' => 'required',
             'nama' => 'required',
-            'nik' => 'required|size:16|unique:penduduk,nik',
+            'nik' => 'required|size:16',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
             'agama' => 'required',
