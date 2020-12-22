@@ -24,7 +24,7 @@ class LaporanController extends Controller
     {
         $tgl_sekarang = date('Y-m-d');
         $tgl1 = date('Y-m-d', strtotime('-15 years', strtotime($tgl_sekarang)));
-        $tgl2 = date('Y-m-d', strtotime('-64 years', strtotime($tgl1)));
+        $tgl2 = date('Y-m-d', strtotime('-64 years', strtotime($tgl_sekarang)));
 
         $pendudukProduktifs = Penduduk::whereBetween('tanggal_lahir', [$tgl2, $tgl1])->orderBy('tanggal_lahir')->get();
 
