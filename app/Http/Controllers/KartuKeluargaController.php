@@ -98,7 +98,7 @@ class KartuKeluargaController extends Controller
     public function update(Request $request, $id)
     {
         $validateData = $request->validate([
-            'no' => 'required',
+            'no' => 'required|size:16|unique:kartu_keluarga,no',
             'jorong_id' => 'required',
             'tanggal_pencatatan' => 'required',
         ]);
@@ -131,7 +131,6 @@ class KartuKeluargaController extends Controller
         $pekerjaans = Pekerjaan::orderBy('nama')->get();
         $kewarganegaraans = Kewarganegaraan::orderBy('nama')->get();
         $kartu_keluarga_id = KartuKeluarga::findOrFail($id);
-        // var_dump($kartu_keluarga_id->id);
         
         return view('kartu_keluarga.create-anggota', [
             'kartu_keluargas' => $kartu_keluargas,
